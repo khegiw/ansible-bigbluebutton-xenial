@@ -1,0 +1,9 @@
+---
+# defaults file for bigbluebutton
+
+bbb_apt_key: '328BD16D'
+
+#Repositories
+bbb_apt_repo_url: 'http://ubuntu.bigbluebutton.org/xenial-110/'
+libreoffice_ppa: 'ppa:libreoffice/ppa'
+ffmpeg_ppa: 'ppa:jonathonf/ffmpeg-3'
