@@ -14,18 +14,18 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/xenial64"
 #   config.vm.network "public_network"
-# config.vm.provider "virtualbox" do |v|
-#         v.memory = 4100
-#         v.cpus = 2
-#     end
+config.vm.provider "virtualbox" do |v|
+        v.memory = 4100
+        v.cpus = 2
+    end
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 443, host: 4430
   config.vm.network "forwarded_port", guest: 1935, host: 19350
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y ansible
-  #   cd /vagrant && sudo ansible-playbook test.yml
-  # SHELL
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y ansible
+    cd /vagrant && sudo ansible-playbook test.yml
+  SHELL
   # config.vm.provision "shell", inline: <<-SHELL
   #   cd /vagrant && sudo ansible-playbook test.yml
   # SHELL
